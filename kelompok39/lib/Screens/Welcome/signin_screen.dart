@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kelompok39/Screens/Home/home_screen.dart';
 import 'package:kelompok39/Screens/Welcome/reqister_screen.dart';
 import 'package:kelompok39/components/rounded_button.dart';
+import 'package:kelompok39/constants.dart';
 
 import '../../components/rounded_input_field.dart';
 import '../../components/rounded_password_field.dart';
@@ -32,7 +34,7 @@ class SignInScreen extends StatelessWidget {
                   left: 20,
                   child: RichText(
                     text: TextSpan(
-                      text: "Welcome\n Back",
+                      text: "Welcome\nBack",
                       style: GoogleFonts.roboto(
                           fontSize: 34,
                           fontWeight: FontWeight.w700,
@@ -64,9 +66,54 @@ class SignInScreen extends StatelessWidget {
                     textAlign: TextAlign.right,
                   ),
                 ),
-                RoundedButton(
-                  text: "Sign In",
-                  press: () {},
+                // RoundedButton(
+                //   text: "Sign In",
+                //   press: () {},
+                // ),
+                // SizedBox(
+                //   height: 17.5,
+                // ),
+                // OrDivider(),
+                // SizedBox(
+                //   height: 13.5,
+                // ),
+                // RoundedButton(
+                //   text: "Register",
+                //   press: () {
+                //     Navigator.of(context).push(
+                //         MaterialPageRoute(
+                //             builder: (context) => ReqisterScreen()));
+                //   },
+                //   color: Color.fromRGBO(255, 255, 255, 1),
+                //   textColor: Color.fromRGBO(19, 83, 45, 1),
+                // ),
+                 SizedBox(
+                  width: 273,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => HomeScreen()));
+                    },
+                    style: ButtonStyle(
+                        foregroundColor: MaterialStateProperty.all<Color>(
+                            Color.fromRGBO(255, 255, 255, 1)),
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(kPrimaryColor1),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(29)))),
+                    child: Padding(
+                      padding: EdgeInsets.all(14),
+                      child: Text(
+                        "Sing in",
+                        style: GoogleFonts.nunito(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
                 SizedBox(
                   height: 17.5,
@@ -75,17 +122,34 @@ class SignInScreen extends StatelessWidget {
                 SizedBox(
                   height: 13.5,
                 ),
-                RoundedButton(
-                  text: "Register",
-                  press: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ReqisterScreen()));
-                  },
-                  color: Color.fromRGBO(255, 255, 255, 1),
-                  textColor: Color.fromRGBO(19, 83, 45, 1),
-                ),
+                SizedBox(
+                  width: 273,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => ReqisterScreen()));
+                    },
+                    style: ButtonStyle(
+                        foregroundColor:
+                            MaterialStateProperty.all<Color>(kPrimaryColor1),
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            Color.fromRGBO(255, 255, 255, 1)),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(29)))),
+                    child: Padding(
+                      padding: EdgeInsets.all(14),
+                      child: Text(
+                        "Register",
+                        style: GoogleFonts.nunito(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+                )
               ],
             ),
           )
