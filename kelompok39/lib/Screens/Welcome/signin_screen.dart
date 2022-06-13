@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import 'package:kelompok39/Screens/Home/home_screen.dart';
 import 'package:kelompok39/Screens/Welcome/reqister_screen.dart';
+import 'package:kelompok39/components/already_have_an_account_check.dart';
 import 'package:kelompok39/components/rounded_button.dart';
 import 'package:kelompok39/constants.dart';
 
@@ -46,7 +48,7 @@ class SignInScreen extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 3,
+            flex: 4,
             child: Column(
               children: [
                 RoundedInputField(
@@ -58,13 +60,16 @@ class SignInScreen extends StatelessWidget {
                 ),
                 Container(
                   alignment: AlignmentDirectional.topEnd,
-                  margin: EdgeInsets.only(right: 31),
+                  margin: EdgeInsets.only(right: 44),
                   child: Text(
                     "Forgot Password?",
                     style: GoogleFonts.nunito(
                         fontSize: 13, fontWeight: FontWeight.w300),
                     textAlign: TextAlign.right,
                   ),
+                ),
+                SizedBox(
+                  height: 50,
                 ),
                 // RoundedButton(
                 //   text: "Sign In",
@@ -87,7 +92,7 @@ class SignInScreen extends StatelessWidget {
                 //   color: Color.fromRGBO(255, 255, 255, 1),
                 //   textColor: Color.fromRGBO(19, 83, 45, 1),
                 // ),
-                 SizedBox(
+                SizedBox(
                   width: 273,
                   child: ElevatedButton(
                     onPressed: () {
@@ -98,7 +103,7 @@ class SignInScreen extends StatelessWidget {
                         foregroundColor: MaterialStateProperty.all<Color>(
                             Color.fromRGBO(255, 255, 255, 1)),
                         backgroundColor:
-                            MaterialStateProperty.all<Color>(kPrimaryColor1),
+                            MaterialStateProperty.all<Color>(cPrimary1),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
@@ -116,39 +121,15 @@ class SignInScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 17.5,
+                  height: 10,
                 ),
-                OrDivider(),
-                SizedBox(
-                  height: 13.5,
-                ),
-                SizedBox(
-                  width: 273,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => ReqisterScreen()));
-                    },
-                    style: ButtonStyle(
-                        foregroundColor:
-                            MaterialStateProperty.all<Color>(kPrimaryColor1),
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                            Color.fromRGBO(255, 255, 255, 1)),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(29)))),
-                    child: Padding(
-                      padding: EdgeInsets.all(14),
-                      child: Text(
-                        "Register",
-                        style: GoogleFonts.nunito(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                  ),
+                AlreadyHaveAnAccountCheck(
+                  prees: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ReqisterScreen()));
+                  },
                 )
               ],
             ),

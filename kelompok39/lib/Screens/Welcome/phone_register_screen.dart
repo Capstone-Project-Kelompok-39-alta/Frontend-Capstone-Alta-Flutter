@@ -76,7 +76,7 @@ class PhoneRegisterScreen extends StatelessWidget {
                         foregroundColor:
                             MaterialStateProperty.all<Color>(Colors.white),
                         backgroundColor:
-                            MaterialStateProperty.all<Color>(kPrimaryColor1),
+                            MaterialStateProperty.all<Color>(cPrimary1),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(

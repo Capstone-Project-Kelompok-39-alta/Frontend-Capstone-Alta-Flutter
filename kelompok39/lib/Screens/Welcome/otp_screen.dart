@@ -14,7 +14,6 @@ class _OtpScreenState extends State<OtpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Color(0xfff7f6fb),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 24, horizontal: 32),
@@ -77,7 +76,7 @@ class _OtpScreenState extends State<OtpScreen> {
                           foregroundColor:
                               MaterialStateProperty.all<Color>(Colors.white),
                           backgroundColor:
-                              MaterialStateProperty.all<Color>(kPrimaryColor1),
+                              MaterialStateProperty.all<Color>(cPrimary1),
                           shape:
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
@@ -109,7 +108,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   },
                   style: ButtonStyle(
                       foregroundColor:
-                          MaterialStateProperty.all<Color>(kPrimaryColor1),
+                          MaterialStateProperty.all<Color>(cPrimary1),
                       backgroundColor:
                           MaterialStateProperty.all<Color>(Colors.white),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -136,7 +135,7 @@ class _OtpScreenState extends State<OtpScreen> {
 
   Widget _textFieldOTP({required bool first, last}) {
     return Container(
-      height: 85,
+      height: 80,
       child: AspectRatio(
         aspectRatio: 1.0,
         child: TextField(
@@ -161,7 +160,7 @@ class _OtpScreenState extends State<OtpScreen> {
                 borderSide: BorderSide(width: 2, color: Colors.black12),
                 borderRadius: BorderRadius.circular(12)),
             focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(width: 2, color: kPrimaryColor1),
+                borderSide: BorderSide(width: 2, color: cPrimary1),
                 borderRadius: BorderRadius.circular(12)),
           ),
         ),
