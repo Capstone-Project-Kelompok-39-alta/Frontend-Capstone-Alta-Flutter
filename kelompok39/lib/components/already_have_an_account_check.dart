@@ -32,7 +32,7 @@ class AlreadyHaveAnAccountCheck extends StatelessWidget {
               style: GoogleFonts.nunito(
                 fontSize: 13,
                 fontWeight: FontWeight.w300,
-                color: kPrimaryColor1,
+                color: cPrimary1,
               ),
             ),
           )

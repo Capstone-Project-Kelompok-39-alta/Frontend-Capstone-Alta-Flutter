@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kelompok39/constants.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
 
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -167,7 +172,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 60,
+                height: 40,
               ),
               SizedBox(
                 width: 273,
@@ -203,16 +208,26 @@ class ProfileScreen extends StatelessWidget {
                                       Container(
                                         width: 123,
                                         height: 40,
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(29),
-                                          child: TextButton(
-                                            onPressed: () {},
-                                            child: const Text("Sing Out"),
-                                            style: TextButton.styleFrom(
-                                                primary: cPrimary1,
-                                                side: BorderSide(
-                                                    color: cPrimary1)),
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            color: (cPrimary1),
+                                            width: 1,
+                                          ),
+                                          borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(15),
+                                            topRight: Radius.circular(15),
+                                            bottomLeft: Radius.circular(15),
+                                            bottomRight: Radius.circular(15),
+                                          ),
+                                        ),
+                                        child: TextButton(
+                                          onPressed: () {},
+                                          child: Text(
+                                            "Sing Out",
+                                            style: GoogleFonts.nunito(
+                                                color: cPrimary4,
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: 15),
                                           ),
                                         ),
                                       ),

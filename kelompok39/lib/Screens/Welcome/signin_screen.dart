@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:kelompok39/Screens/Home/home_screen.dart';
 import 'package:kelompok39/Screens/Welcome/reqister_screen.dart';
+import 'package:kelompok39/Screens/main_screen.dart';
 import 'package:kelompok39/components/already_have_an_account_check.dart';
 import 'package:kelompok39/components/rounded_button.dart';
 import 'package:kelompok39/constants.dart';
@@ -97,7 +98,7 @@ class SignInScreen extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => HomeScreen()));
+                          builder: (context) => MainScreen()));
                     },
                     style: ButtonStyle(
                         foregroundColor: MaterialStateProperty.all<Color>(

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kelompok39/Screens/Home/home_screen.dart';
 import 'package:kelompok39/Screens/Profile/profile_screen.dart';
 import 'package:kelompok39/Screens/Welcome/reqister_screen.dart';
 import 'package:kelompok39/Screens/Welcome/signin_screen.dart';
+import 'package:kelompok39/Screens/main_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -87,7 +89,7 @@ class WelcomeScreen extends StatelessWidget {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => ProfileScreen()));
+                                      builder: (context) => SignInScreen()));
                             },
                             child: Container(
                               width: 112,
