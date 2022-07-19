@@ -5,6 +5,7 @@ class PaymentModel {
   final String harga;
   final String logo;
   final String date;
+  final String date2;
   final bool proses;
 
   PaymentModel({
@@ -13,34 +14,131 @@ class PaymentModel {
     required this.no,
     required this.harga,
     required this.logo,
-    required this.proses,
     required this.date,
+    required this.date2,
+    required this.proses,
   });
 }
 
 final List<PaymentModel> paymentModels = [
-    PaymentModel(
-        id: '1',
-        name: 'Telkomsel',
-        no: '123123123123',
-        harga: "75000",
-        date: '17 agustus 2022',
-        proses: true,
-        logo: 'data:image/png;base64,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'),
-    PaymentModel(
-        id: '2',
-        name: 'Telkomsel',
-        no: '123123123123',
-        harga: "75000",
-        date: '17 agustus 2022',
-        proses: true,
-        logo: 'https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/1200px-BNI_logo.svg.png'),
-    PaymentModel(
-        id: '3',
-        name: 'Telkomsel',
-        no: '123123123123',
-        date: '17 agustus 2022',
-        harga: "75000",
-        proses: true,
-        logo: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.nL9v9QnRc9wBHJIHB9svDwHaHa%26pid%3DApi&f=1'),
-  ];
+  PaymentModel(
+      id: '1',
+      name: 'Telkomsel',
+      no: '123123123123',
+      harga: "75000",
+      date: '17 agustus 2022',
+      date2: '20',
+      proses: true,
+      logo:
+          'https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/1200px-BNI_logo.svg.png'),
+  PaymentModel(
+      id: '2',
+      name: 'Telkomsel',
+      no: '123123123123',
+      harga: "75000",
+      date: '17 agustus 2022',
+      date2: '25',
+      proses: true,
+      logo:
+          'https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/1200px-BNI_logo.svg.png'),
+  PaymentModel(
+      id: '3',
+      name: 'Telkomsel',
+      no: '123123123123',
+      harga: "75000",
+      date: '17 agustus 2022',
+      date2: '20',
+      proses: true,
+      logo:
+          'https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/1200px-BNI_logo.svg.png'),
+  PaymentModel(
+      id: '4',
+      name: 'Telkomsel',
+      no: '123123123123',
+      harga: "75000",
+      date: '17 agustus 2022',
+      date2: '25',
+      proses: true,
+      logo:
+          'https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/1200px-BNI_logo.svg.png'),
+  PaymentModel(
+      id: '5',
+      name: 'Telkomsel',
+      no: '123123123123',
+      harga: "75000",
+      date: '17 agustus 2022',
+      date2: '20',
+      proses: true,
+      logo:
+          'https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/1200px-BNI_logo.svg.png'),
+  PaymentModel(
+      id: '6',
+      name: 'Telkomsel',
+      no: '123123123123',
+      harga: "75000",
+      date: '17 agustus 2022',
+      date2: '25',
+      proses: true,
+      logo:
+          'https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/1200px-BNI_logo.svg.png'),
+  PaymentModel(
+      id: '7',
+      name: 'Telkomsel',
+      no: '123123123123',
+      harga: "75000",
+      date: '17 agustus 2022',
+      date2: '20',
+      proses: true,
+      logo:
+          'https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/1200px-BNI_logo.svg.png'),
+  PaymentModel(
+      id: '8',
+      name: 'Telkomsel',
+      no: '123123123123',
+      harga: "75000",
+      date: '17 agustus 2022',
+      date2: '25',
+      proses: true,
+      logo:
+          'https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/1200px-BNI_logo.svg.png'),
+  PaymentModel(
+      id: '9',
+      name: 'Telkomsel',
+      no: '123123123123',
+      harga: "75000",
+      date: '17 agustus 2022',
+      date2: '20',
+      proses: true,
+      logo:
+          'https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/1200px-BNI_logo.svg.png'),
+  PaymentModel(
+      id: '10',
+      name: 'Telkomsel',
+      no: '123123123123',
+      harga: "75000",
+      date: '17 agustus 2022',
+      date2: '25',
+      proses: true,
+      logo:
+          'https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/1200px-BNI_logo.svg.png'),
+  PaymentModel(
+      id: '11',
+      name: 'Telkomsel',
+      no: '123123123123',
+      date: '17 agustus 2022',
+      date2: '24',
+      harga: "75000",
+      proses: true,
+      logo:
+          'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.nL9v9QnRc9wBHJIHB9svDwHaHa%26pid%3DApi&f=1'),
+  PaymentModel(
+      id: '12',
+      name: 'Telkomsel',
+      no: '123123123123',
+      harga: "75000",
+      date: '17 agustus 2022',
+      date2: '25',
+      proses: true,
+      logo:
+          'https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/1200px-BNI_logo.svg.png'),
+];

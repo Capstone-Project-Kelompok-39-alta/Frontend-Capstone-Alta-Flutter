@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:kelompok39/Screens/Profile/profile_screen.dart';
@@ -21,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
       minimum: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -30,14 +32,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 backgroundImage: AssetImage('assets/img/Mark PP.png'),
                 maxRadius: 30,
               ),
-              Text("Mark Sanchez",
+              Text("Hallo Mark!",
                   style: GoogleFonts.nunito(
                       fontSize: 17,
                       fontWeight: FontWeight.w400,
                       color: cDark1)),
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.notifications),
+                icon: SvgPicture.asset('assets/icons/IconDark1Black/Name=Bell.svg'),
               )
             ],
           ),
@@ -63,15 +65,12 @@ class _HomeScreenState extends State<HomeScreen> {
             child: ListView.builder(
                 itemCount: paymentModels.length,
                 itemBuilder: (context, index) {
-                  return Padding(
-                    padding: EdgeInsets.all(10),
-                    child: CardPaymentHome(
-                      amount: paymentModels[index].harga,
-                      date: paymentModels[index].date,
-                      logo: paymentModels[index].logo,
-                      no: paymentModels[index].no,
-                      title: paymentModels[index].name,
-                    ),
+                  return CardPaymentHome(
+                    amount: paymentModels[index].harga,
+                    date: paymentModels[index].date,
+                    logo: paymentModels[index].logo,
+                    no: paymentModels[index].no,
+                    title: paymentModels[index].name,
                   );
                 }),
           ),
@@ -88,15 +87,12 @@ class _HomeScreenState extends State<HomeScreen> {
             child: ListView.builder(
                 itemCount: paymentModels.length,
                 itemBuilder: (context, index) {
-                  return Padding(
-                    padding: EdgeInsets.all(10),
-                    child: CardPaymentHome(
-                      amount: paymentModels[index].harga,
-                      date: paymentModels[index].date,
-                      logo: paymentModels[index].logo,
-                      no: paymentModels[index].no,
-                      title: paymentModels[index].name,
-                    ),
+                  return CardPaymentHome(
+                    amount: paymentModels[index].harga,
+                    date: paymentModels[index].date,
+                    logo: paymentModels[index].logo,
+                    no: paymentModels[index].no,
+                    title: paymentModels[index].name,
                   );
                 }),
           ),

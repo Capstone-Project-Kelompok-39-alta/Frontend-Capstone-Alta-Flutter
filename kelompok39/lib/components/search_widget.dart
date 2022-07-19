@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SearchWidget extends StatefulWidget {
   final String text;
@@ -37,7 +38,7 @@ class _SearchWidgetState extends State<SearchWidget> {
       child: TextField(
         controller: controller,
         decoration: InputDecoration(
-          icon: Icon(Icons.search, color: style.color),
+          icon: SvgPicture.asset("assets/icons/IconDark5Gray/Name=Search.svg"),
           suffixIcon: widget.text.isNotEmpty
               ? GestureDetector(
                   child: Icon(Icons.close, color: style.color),

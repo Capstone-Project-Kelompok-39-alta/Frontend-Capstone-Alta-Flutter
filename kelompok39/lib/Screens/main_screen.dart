@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+
 import 'package:kelompok39/Screens/Home/home_screen.dart';
 import 'package:kelompok39/Screens/Invoice/invoice_screen.dart';
 import 'package:kelompok39/Screens/Profile/profile_screen.dart';
 import 'package:kelompok39/Screens/Transaction/transaction_screen.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kelompok39/constants.dart';
 
 class MainScreen extends StatefulWidget {
@@ -42,21 +44,25 @@ class _MainScreenState extends State<MainScreen> {
         showSelectedLabels: false,
         iconSize: 20,
         elevation: 0,
-        items: const [
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: "Home",
+            activeIcon: SvgPicture.asset('assets/icons/IconLight1White/Name=Home.svg'),
+            icon: SvgPicture.asset('assets/icons/IconLight1White/Name=Home.svg'),
+            label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.line_weight_outlined),
+            activeIcon: SvgPicture.asset('assets/icons/IconLight1White/Name=Category.svg'),
+            icon: SvgPicture.asset('assets/icons/IconLight1White/Name=Category.svg'),
             label: "Invoice",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.text_snippet_outlined),
+            activeIcon: SvgPicture.asset('assets/icons/IconLight1White/Name=Bill.svg'),
+            icon: SvgPicture.asset('assets/icons/IconLight1White/Name=Bill.svg'),
             label: "Transaction",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.report),
+            activeIcon: SvgPicture.asset('assets/icons/IconLight1White/Name=Profile.svg'),
+            icon: SvgPicture.asset('assets/icons/IconLight1White/Name=Profile.svg'),
             label: "Profile",
           ),
         ],

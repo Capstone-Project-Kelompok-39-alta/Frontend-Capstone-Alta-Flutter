@@ -34,8 +34,7 @@ class _TransactionScreenState extends State<TransactionScreen> {
         child: Column(
           children: <Widget>[
             buildSearch(),
-            Expanded(
-              child: Row(
+            Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -133,20 +132,18 @@ class _TransactionScreenState extends State<TransactionScreen> {
                   ),
                 ],
               ),
-            ),
             Expanded(
               child: ListView.builder(
                   itemCount: paymentModels.length,
                   itemBuilder: (context, index) {
-                    return Padding(
-                      padding: EdgeInsets.all(10),
-                      child: CardPayment(
+                    return 
+                      CardPayment(
                         amount: paymentModels[index].harga,
                         date: paymentModels[index].date,
                         logo: paymentModels[index].logo,
                         no: paymentModels[index].no,
                         title: paymentModels[index].name,
-                      ),
+                      
                     );
                   }),
             ),

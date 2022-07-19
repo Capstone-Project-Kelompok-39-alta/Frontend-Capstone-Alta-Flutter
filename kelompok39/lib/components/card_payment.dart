@@ -42,9 +42,9 @@ class CardPayment extends StatelessWidget {
         Column(
           children: [
             Padding(
-              padding: EdgeInsets.all(14),
+              padding: EdgeInsets.all(16),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Container(
                     padding: const EdgeInsets.all(16),
@@ -57,21 +57,25 @@ class CardPayment extends StatelessWidget {
                     ),
                   ),
                   Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(title,
                           style: GoogleFonts.nunito(
-                            color: cDark1,
-                            fontSize: 15,
-                          )),
+                              color: cDark1,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600)),
                       Text(
                         no,
                         style: GoogleFonts.nunito(
-                          color: cDark1,
-                          fontSize: 15,
-                        ),
+                            color: cDark1,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w300),
                       )
                     ],
+                  ),
+                  SizedBox(
+                    width: 10,
                   ),
                   OutlinedButton(
                     onPressed: () {},
@@ -86,6 +90,7 @@ class CardPayment extends StatelessWidget {
                         primary: cPrimary1,
                         side: BorderSide(color: cPrimary1)),
                   ),
+                  Icon(Icons.more_vert, color: cDark5,)
                 ],
               ),
             ),
@@ -93,26 +98,58 @@ class CardPayment extends StatelessWidget {
               color: cLight5,
               height: 1,
             ),
-            Row(
-              children: [
-                Column(
-                  children: [Text(date), Text('Total Harga'), Text(amount)],
-                ),
-                OutlinedButton(
-                  onPressed: () {},
-                  child: Text("Proses",
-                      style: GoogleFonts.nunito(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w600,
-                      )),
-                  style: OutlinedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0)),
-                      primary: cLight1,
-                      backgroundColor: cPrimary1,
-                      side: BorderSide(color: cPrimary1)),
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        date,
+                        style: GoogleFonts.nunito(
+                            color: cLight5,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w300),
+                      ),
+                      Text(
+                        'Total Harga',
+                        style: GoogleFonts.nunito(
+                            color: cDark1,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w300),
+                      ),
+                      Text(
+                        amount,
+                        style: GoogleFonts.nunito(
+                            color: cDark1,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w700),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 100,
+                  ),
+                  OutlinedButton(
+                    onPressed: () {},
+                    child: Text("Detail",
+                        style: GoogleFonts.nunito(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                        )),
+                    style: OutlinedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0)),
+                        primary: cLight1,
+                        backgroundColor: cPrimary1,
+                        side: BorderSide(color: cPrimary1)),
+                  ),
+                ],
+              ),
             )
           ],
         )
