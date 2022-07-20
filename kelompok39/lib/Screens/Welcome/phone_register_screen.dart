@@ -74,20 +74,20 @@ class PhoneRegisterScreen extends StatelessWidget {
                     },
                     style: ButtonStyle(
                         foregroundColor:
-                            MaterialStateProperty.all<Color>(Colors.white),
+                            MaterialStateProperty.all<Color>(cLight1),
                         backgroundColor:
                             MaterialStateProperty.all<Color>(cPrimary1),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(29)))),
+                                    borderRadius: BorderRadius.circular(18)))),
                     child: Padding(
                       padding: EdgeInsets.all(14),
                       child: Text(
                         "Send Message",
                         style: GoogleFonts.nunito(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
+                          fontSize: 15,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                     ),

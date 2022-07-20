@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kelompok39/constants.dart';
 
@@ -23,22 +24,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 children: <Widget>[
                   Align(
                     alignment: Alignment.topLeft,
-                    child: GestureDetector(
-                      child: Icon(
-                        Icons.arrow_back,
-                        size: 32,
-                        color: Color.fromRGBO(43, 43, 43, 1),
-                      ),
-                    ),
+                    child: IconButton(
+                        onPressed: () {},
+                        icon: SvgPicture.asset(
+                            'assets/icons/IconDark1Black/Name=Arrow Left.svg')),
                   ),
                   Text(
                     "Profile",
                     style: GoogleFonts.roboto(
-                        fontSize: 34,
-                        fontWeight: FontWeight.w700,
+                        fontSize: 25,
+                        fontWeight: FontWeight.w400,
                         color: Colors.black),
                   ),
-                  Icon(Icons.notifications_none_sharp),
+                  IconButton(
+                      onPressed: () {},
+                      icon: SvgPicture.asset(
+                          'assets/icons/IconDark1Black/Name=Bell.svg')),
                 ],
               ),
               SizedBox(

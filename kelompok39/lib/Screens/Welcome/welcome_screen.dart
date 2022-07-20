@@ -5,6 +5,7 @@ import 'package:kelompok39/Screens/Profile/profile_screen.dart';
 import 'package:kelompok39/Screens/Welcome/reqister_screen.dart';
 import 'package:kelompok39/Screens/Welcome/signin_screen.dart';
 import 'package:kelompok39/Screens/main_screen.dart';
+import 'package:kelompok39/constants.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -52,7 +53,6 @@ class WelcomeScreen extends StatelessWidget {
                           color: Colors.black),
                     )
                   ])),
-              
               FittedBox(
                 child: Container(
                   margin: EdgeInsets.only(bottom: 25),
@@ -60,8 +60,8 @@ class WelcomeScreen extends StatelessWidget {
                     right: 16,
                   ),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      color: Colors.grey),
+                      borderRadius: BorderRadius.circular(15),
+                      color: Color.fromRGBO(69, 90, 100, 1),),
                   child: Stack(
                     children: [
                       Row(
@@ -76,12 +76,19 @@ class WelcomeScreen extends StatelessWidget {
                             },
                             child: Container(
                               width: 112,
-                              height: 46,
+                              height: 48,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(29),
-                                  color: Colors.green),
+                                  borderRadius: BorderRadius.circular(15),
+                                  color: cPrimary1),
                               alignment: Alignment.center,
-                              child: Text("Register"),
+                              child: Text(
+                                "Register",
+                                style: GoogleFonts.nunito(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w700,
+                                  color: cLight1,
+                                ),
+                              ),
                             ),
                           ),
                           GestureDetector(
@@ -94,9 +101,16 @@ class WelcomeScreen extends StatelessWidget {
                             child: Container(
                               width: 112,
                               height: 46,
-                              color: Colors.grey,
+                              color: Color.fromRGBO(69, 90, 100, 1),
                               alignment: Alignment.center,
-                              child: Text("Sign In"),
+                              child: Text(
+                                "Sign In",
+                                style: GoogleFonts.nunito(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w700,
+                                  color: cLight1,
+                                ),
+                              ),
                             ),
                           )
                         ],

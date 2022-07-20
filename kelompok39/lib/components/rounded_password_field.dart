@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:kelompok39/components/text_field_container.dart';
+
+import '../constants.dart';
 
 class RoundedPasswordField extends StatelessWidget {
   final ValueChanged<String> onChanged;
@@ -14,16 +17,15 @@ class RoundedPasswordField extends StatelessWidget {
       child: TextField(
         obscureText: true,
         onChanged: onChanged,
-        decoration: const InputDecoration(
+        decoration: InputDecoration(
           hintText: "enter your password",
-          icon: Icon(
-            Icons.lock_outline,
-            color: Color.fromRGBO(170, 170, 170, 1),
-          ),
-          suffixIcon: Icon(
-            Icons.visibility,
-            color: Color.fromRGBO(170, 170, 170, 1),
-          ),
+          icon: SvgPicture.asset('assets/icons/IconDark5Gray/Name=Lock.svg',
+              color: cDark5),
+          suffixIcon: SvgPicture.asset(
+              'assets/icons/IconDark5Gray/Name=Eye Closed.svg',
+              width: 16,
+              height: 16,
+              color: cDark5),
           border: InputBorder.none,
         ),
       ),

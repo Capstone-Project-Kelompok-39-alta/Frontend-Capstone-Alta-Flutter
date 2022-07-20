@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:kelompok39/Screens/Invoice/detail_invoice.dart';
 import 'package:kelompok39/Screens/Profile/profile_screen.dart';
 import 'package:kelompok39/components/card_payment_home.dart';
 import 'package:kelompok39/constants.dart';
@@ -26,20 +27,39 @@ class _HomeScreenState extends State<HomeScreen> {
         children: <Widget>[
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              CircleAvatar(
-                backgroundColor: Colors.blue,
-                backgroundImage: AssetImage('assets/img/Mark PP.png'),
-                maxRadius: 30,
+              ClipRRect(
+                borderRadius: BorderRadius.circular(16),
+                child: Image.asset(
+                  'assets/img/Mark PP.png',
+                  fit: BoxFit.cover,
+                  width: 40,
+                  height: 40,
+                ),
               ),
-              Text("Hallo Mark!",
+              
+              Text("Hallo, Mark!",
                   style: GoogleFonts.nunito(
-                      fontSize: 17,
+                      fontSize: 25,
                       fontWeight: FontWeight.w400,
                       color: cDark1)),
+              SizedBox(
+                width: 16
+              ),
+              SizedBox(
+                width: 16
+              ),
+              SizedBox(
+                width: 16
+              ),
+              SizedBox(
+                width: 16
+              ),
               IconButton(
                 onPressed: () {},
-                icon: SvgPicture.asset('assets/icons/IconDark1Black/Name=Bell.svg'),
+                icon: SvgPicture.asset(
+                    'assets/icons/IconDark1Black/Name=Bell.svg'),
               )
             ],
           ),
@@ -65,13 +85,31 @@ class _HomeScreenState extends State<HomeScreen> {
             child: ListView.builder(
                 itemCount: paymentModels.length,
                 itemBuilder: (context, index) {
-                  return CardPaymentHome(
-                    amount: paymentModels[index].harga,
-                    date: paymentModels[index].date,
-                    logo: paymentModels[index].logo,
-                    no: paymentModels[index].no,
-                    title: paymentModels[index].name,
-                  );
+                  return GestureDetector(
+                      child: CardPaymentHome(
+                        amount: paymentModels[index].harga,
+                        date: paymentModels[index].date,
+                        logo: paymentModels[index].logo,
+                        no: paymentModels[index].no,
+                        title: paymentModels[index].name,
+                      ),
+                      onTap: () => {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => DetailInvoice(
+                                          title: 'Perusahaan Listrik Negara',
+                                          type: 'Tagihan Listrik',
+                                          status: 'Paid',
+                                          no: '#001',
+                                          userid: '5136123123123',
+                                          username: 'Mark Sanchez',
+                                          amount: '701.431',
+                                          date: '20 Agustus 2022',
+                                          logo:
+                                              'https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/1200px-BNI_logo.svg.png',
+                                        )))
+                          });
                 }),
           ),
           SizedBox(height: 48),

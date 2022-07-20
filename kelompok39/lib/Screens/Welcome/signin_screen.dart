@@ -41,7 +41,7 @@ class SignInScreen extends StatelessWidget {
                       style: GoogleFonts.roboto(
                           fontSize: 34,
                           fontWeight: FontWeight.w700,
-                          color: Colors.black),
+                          color: cPrimary5),
                     ),
                   ),
                 ),
@@ -72,27 +72,6 @@ class SignInScreen extends StatelessWidget {
                 SizedBox(
                   height: 50,
                 ),
-                // RoundedButton(
-                //   text: "Sign In",
-                //   press: () {},
-                // ),
-                // SizedBox(
-                //   height: 17.5,
-                // ),
-                // OrDivider(),
-                // SizedBox(
-                //   height: 13.5,
-                // ),
-                // RoundedButton(
-                //   text: "Register",
-                //   press: () {
-                //     Navigator.of(context).push(
-                //         MaterialPageRoute(
-                //             builder: (context) => ReqisterScreen()));
-                //   },
-                //   color: Color.fromRGBO(255, 255, 255, 1),
-                //   textColor: Color.fromRGBO(19, 83, 45, 1),
-                // ),
                 SizedBox(
                   width: 273,
                   child: ElevatedButton(
@@ -102,19 +81,19 @@ class SignInScreen extends StatelessWidget {
                     },
                     style: ButtonStyle(
                         foregroundColor: MaterialStateProperty.all<Color>(
-                            Color.fromRGBO(255, 255, 255, 1)),
+                            cLight1),
                         backgroundColor:
                             MaterialStateProperty.all<Color>(cPrimary1),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(29)))),
+                                    borderRadius: BorderRadius.circular(18)))),
                     child: Padding(
                       padding: EdgeInsets.all(14),
                       child: Text(
                         "Sing in",
                         style: GoogleFonts.nunito(
-                          fontSize: 14,
+                          fontSize: 15,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -136,41 +115,6 @@ class SignInScreen extends StatelessWidget {
             ),
           )
         ],
-      ),
-    );
-  }
-}
-
-class OrDivider extends StatelessWidget {
-  const OrDivider({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      width: size.width * 0.8,
-      child: Row(children: <Widget>[
-        buildDivider(),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30),
-          child: Text(
-            "OR",
-            style: GoogleFonts.inter(
-              fontSize: 12,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-        ),
-        buildDivider(),
-      ]),
-    );
-  }
-
-  Expanded buildDivider() {
-    return Expanded(
-      child: Divider(
-        color: Color.fromRGBO(0, 0, 0, 1),
-        height: 3,
       ),
     );
   }

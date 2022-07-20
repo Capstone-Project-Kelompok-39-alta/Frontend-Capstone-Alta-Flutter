@@ -81,19 +81,19 @@ class ReqisterScreen extends StatelessWidget {
                     },
                     style: ButtonStyle(
                         foregroundColor: MaterialStateProperty.all<Color>(
-                            Color.fromRGBO(255, 255, 255, 1)),
+                            cLight1),
                         backgroundColor:
                             MaterialStateProperty.all<Color>(cPrimary1),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(29)))),
+                                    borderRadius: BorderRadius.circular(18)))),
                     child: Padding(
                       padding: EdgeInsets.all(14),
                       child: Text(
                         "Register",
                         style: GoogleFonts.nunito(
-                          fontSize: 14,
+                          fontSize: 15,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
