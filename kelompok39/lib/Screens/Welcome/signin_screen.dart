@@ -91,7 +91,7 @@ class SignInScreen extends StatelessWidget {
                     child: Padding(
                       padding: EdgeInsets.all(14),
                       child: Text(
-                        "Sing in",
+                        "Sign In",
                         style: GoogleFonts.nunito(
                           fontSize: 15,
                           fontWeight: FontWeight.w500,
